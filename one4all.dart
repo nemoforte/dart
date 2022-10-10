@@ -27,11 +27,6 @@ main() {
       }
     }
     
-    for (int i = 0; i < list.length; i=i+2) {
-      if (defgap1 < list[i].length) {
-        defgap1 = list[i].length;
-      }
-    }
   } else if (op == '2') {
     list.add('k*k*k[8]');
     stdout.writeln('wpisz liczbe');
@@ -49,11 +44,6 @@ main() {
       }
     }
 
-    for (int i = 0; i < list.length; i=i+2) {
-      if (defgap1 < list[i].length) {
-        defgap1 = list[i].length;
-      }
-    }
   } else {
     list.add('sqrt(k)');
     stdout.writeln('wpisz liczbe');
@@ -69,13 +59,13 @@ main() {
         nxt = stdin.readLineSync();
       }
     }
-    
-    for (int i = 0; i < list.length; i=i+2) {
+  }
+
+  for (int i = 0; i < list.length; i=i+2) {
       if (defgap1 < list[i].length) {
         defgap1 = list[i].length;
       }
     }
-  }
 
   //print(list);
   
