@@ -3,7 +3,7 @@ import "dart:math";
 
 main() {
   List list = ['k'];
-  stdout.writeln('wybierz działanie: 1 - k^3; 2 - k^3 oct; 3 - sqrt(k)');
+  stdout.writeln('choose operation: 1 - k^3; 2 - k^3 oct; 3 - sqrt(k)');
   String? op = stdin.readLineSync();
   String? nxt;
   int defgap1 = 0;
@@ -12,7 +12,7 @@ main() {
 
   if (op == '1'){
     list.add('k*k*k');
-    stdout.writeln('wpisz liczbe');
+    stdout.writeln('input number');
     nxt = stdin.readLineSync();
 
     while (nxt != 'stop') {
@@ -22,14 +22,14 @@ main() {
         k = k*k*k;
         nxt = k.toString();
         list.add(nxt);
-        stdout.writeln("wpisz kolejna liczbe lub 'stop'");
+        stdout.writeln("input another number or 'stop'");
         nxt = stdin.readLineSync();
       }
     }
     
   } else if (op == '2') {
     list.add('k*k*k[8]');
-    stdout.writeln('wpisz liczbe');
+    stdout.writeln('input number');
     nxt = stdin.readLineSync();
 
     while (nxt != 'stop') {
@@ -39,14 +39,14 @@ main() {
         k = k*k*k;
         nxt = k.toRadixString(8);
         list.add(nxt);
-        stdout.writeln("wpisz kolejna liczbe lub 'stop'");
+        stdout.writeln("input another number or 'stop'");
         nxt = stdin.readLineSync();
       }
     }
 
   } else {
     list.add('sqrt(k)');
-    stdout.writeln('wpisz liczbe');
+    stdout.writeln('input number');
     nxt = stdin.readLineSync();
 
     while (nxt != 'stop') {
@@ -55,7 +55,7 @@ main() {
         int k = int.parse(nxt);
         nxt = sqrt(k).toStringAsFixed(6);
         list.add(nxt);
-        stdout.writeln("wpisz kolejna liczbe lub 'stop'");
+        stdout.writeln("input another number or 'stop'");
         nxt = stdin.readLineSync();
       }
     }
@@ -69,7 +69,7 @@ main() {
 
   //print(list);
   
-  stdout.writeln('wyrownanie: 1 - do lewej, 2 - do prawej');
+  stdout.writeln('alignment: 1 - to the left, 2 - to the right');
   String? w = stdin.readLineSync();
 
   if (w == '1') {
