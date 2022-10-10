@@ -63,6 +63,6 @@ main() {
   gap2 = "";
   }
 
-  print('\nKoniec programu');
+  print('\nKoniec programu.');
 
 }

@@ -1,52 +1,71 @@
+/*Napisz program, który wypisze poniższy tekst.
+Do obliczenia sześcianów użyj operacji mnożenia.
+
+Oto szesciany wybranych liczb
+zapisane w systemie osemkowym:
+
+k     k*k*k (system osemkowy)
+2        10
+3        33
+5       175
+
+Koniec programu.*/
+
+import 'dart:io';
+
 main() {
-
-  int k1 = 2;
-  int k2 = 3;
-  int k3 = 5;
-
-  dynamic k31 = k1*k1*k1;
-  dynamic k32 = k2*k2*k2;
-  dynamic k33 = k3*k3*k3;
-
-  k31 = k31.toRadixString(8);
-  k32 = k32.toRadixString(8);
-  k33 = k33.toRadixString(8);
-
-  int len0 = 'k*k*k'.length;        //5
-  int len1 = k31.toString().length; //2
-  int len2 = k32.toString().length; //2
-  int len3 = k33.toString().length; //3
-
-  String gap0 = "";
+  List list = [];
+  String? nxt;
+  int defgap1 = 0;
+  int defgap2 = 0;
   String gap1 = "";
   String gap2 = "";
-  String gap3 = "";
-  int defgaplen = 20;
-  
-  len0 = defgaplen - len0; //20 - 5 = 15
-  len1 = defgaplen - len1; //20 - 2 = 18
-  len2 = defgaplen - len2; //20 - 2 = 18
-  len3 = defgaplen - len3; //20 - 3 = 17
 
-  for (int i = 1; i <= len0; ++i) {
-  gap0 = gap0 + " ";
+  stdout.writeln('input number');
+  nxt = stdin.readLineSync();
+
+  while (nxt != 'stop') {
+    if (nxt != null) {
+      list.add(nxt);
+      int k = int.parse(nxt);
+      k = k*k*k;
+      nxt = k.toRadixString(8);
+      list.add(nxt);
+      stdout.writeln("input another number or 'stop'");
+      nxt = stdin.readLineSync();
+    }
   }
 
-  for (int i = 1; i <= len1; ++i) {
-  gap1 = gap1 + " ";
+  for (int i = 0; i < list.length; i=i+2) {
+    if (defgap1 < list[i].length) {
+      defgap1 = list[i].length;
+    }
   }
 
-  for (int i = 1; i <= len2; ++i) {
-  gap2 = gap2 + " ";
+  for (int i = 1; i <= list.length; i=i+2) {
+    if (defgap2 < list[i].length) {
+      defgap2 = list[i].length;
+    }
   }
 
-  for (int i = 1; i <= len3; ++i) {
-  gap3 = gap3 + " ";
+  print('Oto szesciany wybranych liczb');
+  print('zapisane w systemie osemkowym:');
+  print('k       k*k*k (system osemkowy)\n');
+
+  for (int i = 0; i < list.length; i=i+2) {
+
+    for (int j = 0; j < defgap1-list[i].length; j++) {
+      gap1 = gap1 + " ";
+    }
+    for (int j = 0; j < (5*defgap2)-list[i+1].length; j++) {
+      gap2 = gap2 + " ";
+    }
+
+  print(gap1+list[i]+gap2+list[i+1]);
+  gap1 = "";
+  gap2 = "";
   }
 
-  print('Oto szesciany wybranych liczb \n');
-  print('k'+'$gap0'+'k*k*k \n');
-  print('$k1' + '$gap1' + '$k31');
-  print('$k2' + '$gap2' + '$k32');
-  print('$k3' + '$gap3' + '$k33');
+  print('\nKoniec programu');
+
 }

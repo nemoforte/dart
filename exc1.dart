@@ -49,6 +49,6 @@ main() {
   gap1 = "";
   }
 
-  print('\nKoniec programu');
+  print('\nKoniec programu.');
 
 }
