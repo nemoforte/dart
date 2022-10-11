@@ -90,7 +90,7 @@ main() {
   gap2 = "";
   }
 
-  print(list);
+  //print(list);
 
   print('\nKoniec programu.');
 
