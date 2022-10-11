@@ -1,13 +1,11 @@
-/* Napisz program, który wypisze poniższy tekst.
-Do obliczenia pierwiastków użyj funkcji sqrt. Pamiętaj o
-dołączeniu pliku math.h.
+/*Napisz program wypisujący poniższy tekst.
 
 Oto pierwiastki kwadratowe wybranych liczb:
 
- k        sqrt(k)
-21       4.582576
-32       5.656854
-53       7.280110
+ k       sqrt(k)
+21       4.582575694955839800
+32       5.656854249492380600
+53       7.280109889280518100
 
 Koniec programu.*/
 
@@ -29,7 +27,7 @@ main() {
     if (nxt != null) {
       list.add(nxt);
       int k = int.parse(nxt);
-      nxt = sqrt(k).toStringAsFixed(6);
+      nxt = sqrt(k).toStringAsFixed(18);
       list.add(nxt);
       stdout.writeln("input another number or 'stop'");
       nxt = stdin.readLineSync();
@@ -50,7 +48,19 @@ main() {
 
   print('Oto pierwiastki kwadratowe wybranych liczb: \n');
 
-  for (int i = 0; i < list.length; i=i+2) {
+  for (int j = 0; j < defgap1-list[0].length; j++) {
+   gap1 = gap1 + " ";
+  }
+
+  for (int j = 0; j < (defgap2); j++) {
+    gap2 = gap2 + " ";
+  }
+  
+  print(gap1+list[0]+gap2+list[1]);
+  gap1 = "";
+  gap2 = "";
+
+  for (int i = 2; i < list.length; i=i+2) {
 
     for (int j = 0; j < defgap1-list[i].length; j++) {
       gap1 = gap1 + " ";
