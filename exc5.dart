@@ -13,7 +13,7 @@ import 'dart:io';
 import 'dart:math';
 
 main() {
-  List list = ['k', 'sqrt(k)'];
+  List list = ['k', 'sqrt(k)', ' ', ' '];
   String? nxt;
   int defgap1 = 0;
   int defgap2 = 0;

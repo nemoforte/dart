@@ -13,7 +13,7 @@ Koniec programu.*/
 import 'dart:io';
 
 main() {
-  List list = ['k', 'k*k*k'];
+  List list = ['k', 'k*k*k', ' ', ' '];
   String? nxt;
   int defgap1 = 0;
   String gap1 = "";

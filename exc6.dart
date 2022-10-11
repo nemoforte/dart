@@ -1,20 +1,19 @@
-/*Napisz program, który wypisze poniższy tekst.
-Do obliczenia sześcianów użyj operacji mnożenia.
+/*Napisz program wypisujący poniższy tekst.
 
-Oto szesciany wybranych liczb
-zapisane w systemie osemkowym:
+Oto pierwiastki kwadratowe wybranych liczb:
 
-k     k*k*k (system osemkowy)
-2        10
-3        33
-5       175
+    k       sqrt(k)
+   21     4.582576e+000
+  132     1.148913e+001
+11153     1.056078e+002
 
 Koniec programu.*/
 
 import 'dart:io';
+import 'dart:math';
 
 main() {
-  List list = [];
+  List list = ['k', 'sqrt(k)', ' ', ' '];
   String? nxt;
   int defgap1 = 0;
   int defgap2 = 0;
@@ -28,8 +27,7 @@ main() {
     if (nxt != null) {
       list.add(nxt);
       int k = int.parse(nxt);
-      k = k*k*k;
-      nxt = k.toRadixString(8);
+      nxt = sqrt(k).toStringAsFixed(6);
       list.add(nxt);
       stdout.writeln("input another number or 'stop'");
       nxt = stdin.readLineSync();
@@ -48,16 +46,16 @@ main() {
     }
   }
 
-  print('Oto szesciany wybranych liczb');
-  print('zapisane w systemie osemkowym:\n');
-  print('k       k*k*k (system osemkowy)\n');
+  print('Oto pierwiastki kwadratowe wybranych liczb: \n');
+
+  print ('k          sqrt(k)\n');
 
   for (int i = 0; i < list.length; i=i+2) {
 
     for (int j = 0; j < defgap1-list[i].length; j++) {
       gap1 = gap1 + " ";
     }
-    for (int j = 0; j < (5*defgap2)-list[i+1].length; j++) {
+    for (int j = 0; j < (2*defgap2)-list[i+1].length; j++) {
       gap2 = gap2 + " ";
     }
 
