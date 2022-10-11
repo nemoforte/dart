@@ -3,6 +3,7 @@
 Oto pierwiastki kwadratowe wybranych liczb:
 
  k       sqrt(k)
+ 
 21       4.582575694955839800
 32       5.656854249492380600
 53       7.280109889280518100

@@ -4,6 +4,7 @@ Do obliczenia sześcianów użyj operacji mnożenia.
 Oto szesciany wybranych liczb:
 
   k        k*k*k
+  
  21         9261
  32        32768
 -53      -148877

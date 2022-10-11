@@ -5,6 +5,7 @@ dołączeniu pliku math.h.
 Oto pierwiastki kwadratowe wybranych liczb:
 
  k        sqrt(k)
+ 
 21       4.582576
 32       5.656854
 53       7.280110

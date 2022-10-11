@@ -3,6 +3,7 @@
 Oto pierwiastki kwadratowe wybranych liczb:
 
     k       sqrt(k)
+
    21     4.582576e+000
   132     1.148913e+001
 11153     1.056078e+002
@@ -13,12 +14,14 @@ import 'dart:io';
 import 'dart:math';
 
 main() {
-  List list = ['k', 'sqrt(k)', ' ', ' '];
+  List list = ['k', 'sqrt(k)'];
   String? nxt;
   int defgap1 = 0;
   int defgap2 = 0;
   String gap1 = "";
   String gap2 = "";
+  int e = 0;
+  double h = 0;
 
   stdout.writeln('input number');
   nxt = stdin.readLineSync();
@@ -27,7 +30,12 @@ main() {
     if (nxt != null) {
       list.add(nxt);
       int k = int.parse(nxt);
-      nxt = sqrt(k).toStringAsFixed(6);
+      h = sqrt(k);
+      while (h > 10) {
+        h = h/10;
+        e = e++;
+      }
+      nxt = k.toStringAsFixed(6);
       list.add(nxt);
       stdout.writeln("input another number or 'stop'");
       nxt = stdin.readLineSync();
@@ -59,7 +67,12 @@ main() {
       gap2 = gap2 + " ";
     }
 
-  print(gap1+list[i]+gap2+list[i+1]);
+  while (list[i+1]>10) {
+    list[i+1] = list[i+1]/10;
+    e = e++;
+  }
+
+  print(gap1+list[i]+gap2+list[i+1]+'e+00'+e.toString());
   gap1 = "";
   gap2 = "";
   }

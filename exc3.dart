@@ -5,6 +5,7 @@ Oto szesciany wybranych liczb
 zapisane w systemie osemkowym:
 
 k     k*k*k (system osemkowy)
+
 2        10
 3        33
 5       175
