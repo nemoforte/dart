@@ -33,49 +33,64 @@ main() {
       h = sqrt(k);
       while (h > 10) {
         h = h/10;
-        e = e++;
+        e = e+1;
       }
-      nxt = k.toStringAsFixed(6);
+      while (h < 1) {
+        h = h*10;
+        e = e-1;
+      }
+
+      nxt = h.toStringAsFixed(6);
       list.add(nxt);
+      list.add(e.toString().padLeft(3, '0'));
+      e = 0;
       stdout.writeln("input another number or 'stop'");
       nxt = stdin.readLineSync();
     }
   }
 
-  for (int i = 0; i < list.length; i=i+2) {
+  for (int i = 2; i < list.length; i=i+3) {
     if (defgap1 < list[i].length) {
       defgap1 = list[i].length;
     }
   }
 
-  for (int i = 1; i <= list.length; i=i+2) {
+  for (int i = 3; i <= list.length; i=i+3) {
     if (defgap2 < list[i].length) {
       defgap2 = list[i].length;
     }
   }
 
+  for (int j = 0; j < defgap1-list[0].length; j++) {
+    gap1 = gap1 + " ";
+  }
+  for (int j = 0; j < (defgap2+2)-list[1].length; j++) {
+    gap2 = gap2 + " ";
+  }
+
+
   print('Oto pierwiastki kwadratowe wybranych liczb: \n');
 
-  print ('k          sqrt(k)\n');
+  print(gap1+list[0]+gap2+' '+list[1]);
+  gap1 = "";
+  gap2 = "";
+  
 
-  for (int i = 0; i < list.length; i=i+2) {
+  for (int i = 2; i < list.length; i=i+3) {
 
     for (int j = 0; j < defgap1-list[i].length; j++) {
       gap1 = gap1 + " ";
     }
-    for (int j = 0; j < (2*defgap2)-list[i+1].length; j++) {
+    for (int j = 0; j < (defgap2+2)-list[i+1].length; j++) {
       gap2 = gap2 + " ";
     }
 
-  while (list[i+1]>10) {
-    list[i+1] = list[i+1]/10;
-    e = e++;
-  }
-
-  print(gap1+list[i]+gap2+list[i+1]+'e+00'+e.toString());
+  print(gap1+list[i]+gap2+list[i+1]+'e+'+list[i+2]);
   gap1 = "";
   gap2 = "";
   }
+
+  print(list);
 
   print('\nKoniec programu.');
 
