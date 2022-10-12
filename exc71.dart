@@ -1,8 +1,8 @@
 /*Napisz program, który rysuje na ekranie
 gwiazdki ułożone w trójkąt poniższego typu.
-*
-***
-*****
+   *
+  ***
+ *****
 *******
 Liczbę rzędów podaje użytkownik.
 */
