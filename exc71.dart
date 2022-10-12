@@ -11,15 +11,20 @@ import 'dart:io';
 
 main() {
 
-  String row = '';
+  String row = '*';
+  String gap = '';
   stdout.writeln('podaj liczbe rzedow');
   String? g = stdin.readLineSync();
   if (g != null){
     int k = int.parse(g);
 
     for (int i = 1; i <= k; i++) {
-      row = row + '*';
-      print(row);
+      gap = gap + ' ';
+    }
+
+    for (int i = 1; i <= k; i++) {
+      print(gap.substring(i) + row);
+      row = row + '**';
     }
   }
 }
