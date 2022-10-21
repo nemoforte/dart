@@ -15,7 +15,7 @@ void main() {
   if (g != null) {
     int k = int.parse(g);
 
-    for (int i = 1; i <= k*2; i++) {
+    for (int i = 1; i <= k * 2; i++) {
       row.write('*');
     }
 
