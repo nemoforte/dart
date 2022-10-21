@@ -8,21 +8,19 @@ Liczbę rzędów podaje użytkownik.
 
 import 'dart:io';
 
-main() {
-
-  String row = '';
-  stdout.writeln('podaj liczbe gwiazdek w jednym rzedzie');
+void main() {
+  StringBuffer row = StringBuffer();
+  stdout.writeln('podaj liczbe rzedow');
   String? g = stdin.readLineSync();
-  if (g != null){
+  if (g != null) {
     int k = int.parse(g);
 
-    for (int i = 1; i <= k; i++) {
-      row = row + '*';
-    }
-    
-    for (int i=1; i <= (k / 2).ceil(); i++) {
-      print(row);
+    for (int i = 1; i <= k*2; i++) {
+      row.write('*');
     }
 
+    for (int i = 1; i <= k; i++) {
+      print(row);
+    }
   }
 }

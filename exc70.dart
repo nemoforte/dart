@@ -9,16 +9,15 @@ Liczbę rzędów podaje użytkownik.
 
 import 'dart:io';
 
-main() {
-
-  String row = '';
+void main() {
+  StringBuffer row = StringBuffer();
   stdout.writeln('podaj liczbe rzedow');
   String? g = stdin.readLineSync();
-  if (g != null){
+  if (g != null) {
     int k = int.parse(g);
 
     for (int i = 1; i <= k; i++) {
-      row = row + '*';
+      row.write('*');
       print(row);
     }
   }
